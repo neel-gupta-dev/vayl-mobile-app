@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Knowledge Vault - Resource Library</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "outline-variant": "#404952",
+              "secondary-fixed": "#e5e1e6",
+              "surface-container-low": "#0f1418",
+              "on-secondary-container": "#c1bec3",
+              "on-error": "#490013",
+              "on-primary": "#2724b8",
+              "on-secondary-fixed": "#403f43",
+              "surface-container": "#141a20",
+              "surface-container-highest": "#1e272f",
+              "primary-fixed-dim": "#d1d0ff",
+              "outline": "#6d7680",
+              "on-tertiary-container": "#424a63",
+              "error-dim": "#b95463",
+              "on-primary-fixed-variant": "#4647d3",
+              "on-tertiary-fixed": "#2f384f",
+              "primary": "#c0c1ff",
+              "on-primary-container": "#ccccff",
+              "on-primary-fixed": "#2622b7",
+              "surface-bright": "#222d37",
+              "primary-fixed": "#e1e0ff",
+              "error-container": "#7f2737",
+              "inverse-surface": "#f8f9fe",
+              "inverse-on-surface": "#535559",
+              "on-surface-variant": "#a3acb7",
+              "surface-dim": "#0b0e11",
+              "on-error-container": "#ff97a3",
+              "secondary-fixed-dim": "#d6d3d8",
+              "on-surface": "#dde6f2",
+              "secondary-dim": "#9f9da1",
+              "surface-variant": "#1e272f",
+              "surface-container-high": "#192027",
+              "on-background": "#dde6f2",
+              "background": "#0b0e11",
+              "tertiary-fixed-dim": "#c0c9e6",
+              "on-secondary": "#202023",
+              "primary-container": "#2f2ebe",
+              "tertiary-fixed": "#ced6f5",
+              "tertiary-container": "#ced6f5",
+              "surface": "#0b0e11",
+              "secondary": "#9f9da1",
+              "surface-container-lowest": "#000000",
+              "on-tertiary-fixed-variant": "#4b546d",
+              "secondary-container": "#3c3b3f",
+              "on-tertiary": "#4a536c",
+              "tertiary": "#dee5ff",
+              "inverse-primary": "#494bd7",
+              "surface-tint": "#c0c1ff",
+              "error": "#ec7c8a",
+              "tertiary-dim": "#c0c9e6",
+              "primary-dim": "#b0b2ff",
+              "on-secondary-fixed-variant": "#5c5b5f"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #0b0e11;
+            color: #dde6f2;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body selection:bg-primary/30 selection:text-primary">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#0b0e11] flex items-center justify-between px-6 h-16 w-full">
+<div class="flex items-center gap-4">
+<button class="text-indigo-400 active:scale-95 duration-200 hover:bg-slate-800/50 transition-colors p-2 rounded-lg">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<h1 class="text-xl font-bold tracking-tighter text-slate-100 font-headline">Knowledge Vault</h1>
+</div>
+<div class="flex items-center gap-2">
+<button class="text-indigo-400 active:scale-95 duration-200 hover:bg-slate-800/50 transition-colors p-2 rounded-lg">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+<button class="text-indigo-400 active:scale-95 duration-200 hover:bg-slate-800/50 transition-colors p-2 rounded-lg">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+</div>
+</header>
+<main class="pt-20 pb-24 px-6 max-w-md mx-auto">
+<!-- Search & Filter Area (Silent Productivity style) -->
+<section class="mb-8">
+<div class="bg-surface-container-high rounded-xl p-4 flex items-center gap-3">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="search">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-on-surface w-full font-body placeholder:text-on-surface-variant/50" placeholder="Search resources..." type="text"/>
+<div class="bg-surface-bright px-2 py-1 rounded text-[10px] font-bold text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-xs" data-icon="keyboard_command_key">keyboard_command_key</span>K
+                </div>
+</div>
+</section>
+<!-- Subject Folders Grid -->
+<section class="mb-10">
+<div class="flex justify-between items-end mb-6">
+<div>
+<h2 class="font-headline font-bold text-lg tracking-tight text-on-surface">Subject Folders</h2>
+<p class="text-xs text-on-surface-variant font-medium">12 active domains</p>
+</div>
+<button class="text-primary text-xs font-semibold flex items-center gap-1 active:opacity-70">
+                    See All <span class="material-symbols-outlined text-sm" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<!-- Physics Folder -->
+<div class="bg-surface-container rounded-xl p-5 group hover:bg-surface-container-high transition-all active:scale-[0.98]">
+<div class="w-10 h-10 rounded-lg bg-primary-container flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-primary" data-icon="architecture" style="font-variation-settings: 'FILL' 1;">architecture</span>
+</div>
+<h3 class="font-headline font-bold text-on-surface mb-1">Physics</h3>
+<p class="text-[10px] text-on-surface-variant font-medium uppercase tracking-widest">42 Resources</p>
+</div>
+<!-- Mathematics Folder -->
+<div class="bg-surface-container rounded-xl p-5 group hover:bg-surface-container-high transition-all active:scale-[0.98]">
+<div class="w-10 h-10 rounded-lg bg-surface-bright flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-tertiary" data-icon="functions">functions</span>
+</div>
+<h3 class="font-headline font-bold text-on-surface mb-1">Maths</h3>
+<p class="text-[10px] text-on-surface-variant font-medium uppercase tracking-widest">128 Resources</p>
+</div>
+<!-- Chemistry Folder -->
+<div class="bg-surface-container rounded-xl p-5 group hover:bg-surface-container-high transition-all active:scale-[0.98]">
+<div class="w-10 h-10 rounded-lg bg-surface-bright flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-error" data-icon="science">science</span>
+</div>
+<h3 class="font-headline font-bold text-on-surface mb-1">Chemistry</h3>
+<p class="text-[10px] text-on-surface-variant font-medium uppercase tracking-widest">24 Resources</p>
+</div>
+<!-- Biology Folder -->
+<div class="bg-surface-container rounded-xl p-5 group hover:bg-surface-container-high transition-all active:scale-[0.98]">
+<div class="w-10 h-10 rounded-lg bg-surface-bright flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-on-tertiary-container" data-icon="biotech">biotech</span>
+</div>
+<h3 class="font-headline font-bold text-on-surface mb-1">Biology</h3>
+<p class="text-[10px] text-on-surface-variant font-medium uppercase tracking-widest">56 Resources</p>
+</div>
+</div>
+</section>
+<!-- Recently Added List -->
+<section class="mb-6">
+<div class="flex justify-between items-center mb-6">
+<h2 class="font-headline font-bold text-lg tracking-tight text-on-surface">Recently Added</h2>
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="more_horiz">more_horiz</span>
+</div>
+<div class="space-y-3">
+<!-- PDF Resource -->
+<div class="bg-surface-container-low rounded-xl p-4 flex items-center gap-4 active:bg-surface-container-high transition-colors">
+<div class="w-12 h-12 bg-surface-variant rounded-lg overflow-hidden flex-shrink-0 relative">
+<img class="w-full h-full object-cover opacity-50" data-alt="close up of mathematical equations written in chalk on a dark slate blackboard with focused light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAyvhrlj0Mk0IS_wN187DYx0N-w11PGPt_Hzp8co1q7t2LUp69La-Ck5XFBH503gxu7OltfdFpIlbe5QUI-kYZVWycoTI6r-PpE43EWW-fRN2cLKA57gCCGtYzUR9FCLsijgHB0NUPTNv5tN_mTxh604rGQtidBu2ZqXuKBWqKChVLbjKV6fScq0awl-FEFQlDJj5a1Ofh9ck8-YF3qIYzUsPZyKBIWrlHzUdRN7hcKF_shnoNfi3cXqfPssD7k-XYws8cSTDGF5QC-"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-xl" data-icon="picture_as_pdf">picture_as_pdf</span>
+</div>
+</div>
+<div class="flex-1 min-w-0">
+<h4 class="text-sm font-bold text-on-surface truncate">Quantum Mechanics Intro</h4>
+<p class="text-[10px] text-on-surface-variant flex items-center gap-2 mt-0.5">
+<span>PDF • 4.2 MB</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span>2h ago</span>
+</p>
+</div>
+<button class="p-2 text-on-surface-variant active:text-primary">
+<span class="material-symbols-outlined" data-icon="download">download</span>
+</button>
+</div>
+<!-- Video Resource -->
+<div class="bg-surface-container-low rounded-xl p-4 flex items-center gap-4 active:bg-surface-container-high transition-colors">
+<div class="w-12 h-12 bg-surface-variant rounded-lg overflow-hidden flex-shrink-0 relative">
+<img class="w-full h-full object-cover opacity-50" data-alt="abstract rendering of glowing blue particles forming a DNA double helix in a dark laboratory setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6oD4xvMuKCyHFFj9T94XF94EzyKxJjGqOlBVrXILRHnTLnR2bb-xnysV6mtkDnnVZwWvF2q9jAMntW5I9RKc72PpvmuTZip_37NIdoWqQjERb9hUv7Jjj9pWWYYFw8N0s9LQhSUkWDjKWl_NN-_eN1w7NAcClUMHnMMJvPn0IMapIhgIR3n7D9JJ6_d_XXGjugYMZp_BOh2TE-PuAMbjTaZEcaTHJJj38nxlOp9YTRIkvWxgxi3JBTSdhvKH3HnQJtLuZUobb6HDC"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-xl" data-icon="play_circle">play_circle</span>
+</div>
+</div>
+<div class="flex-1 min-w-0">
+<h4 class="text-sm font-bold text-on-surface truncate">Organic Chemistry Review</h4>
+<p class="text-[10px] text-on-surface-variant flex items-center gap-2 mt-0.5">
+<span>Video • 12:40</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span>Yesterday</span>
+</p>
+</div>
+<button class="p-2 text-on-surface-variant active:text-primary">
+<span class="material-symbols-outlined" data-icon="bookmark">bookmark</span>
+</button>
+</div>
+<!-- Note Resource -->
+<div class="bg-surface-container-low rounded-xl p-4 flex items-center gap-4 active:bg-surface-container-high transition-colors">
+<div class="w-12 h-12 bg-surface-variant rounded-lg overflow-hidden flex-shrink-0 relative">
+<img class="w-full h-full object-cover opacity-50" data-alt="overhead shot of a minimalist workspace with a fountain pen and a notebook on a dark textured desk" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0JGZytwjHYKOusBWtYQIFpNwDgzXt8_cHPqE1CNRkH-m9E6MflyKtJ9KD61EJ1pTbTvZPuSiOOk7kCzudOCgb31vUSOvtBdiUtUE-bmlhlt3XqOXtk9dUsLrv46wJaMHjRSZGBiCE4JNel1yLDaBrxzXlFDUahnrd_V-V9LpBZ5MOapJ3rpYgDdZofzOy6E-yrcM91sHSb6lEtHZ-7h2rJRFN9n0jRAbKpiavxGbuSsDjaKuOlkayVYZzWTON_FL_YNT9KdMRByyG"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-xl" data-icon="description">description</span>
+</div>
+</div>
+<div class="flex-1 min-w-0">
+<h4 class="text-sm font-bold text-on-surface truncate">Calculus III: Summary</h4>
+<p class="text-[10px] text-on-surface-variant flex items-center gap-2 mt-0.5">
+<span>Notes • 12 pages</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span>3 days ago</span>
+</p>
+</div>
+<button class="p-2 text-on-surface-variant active:text-primary">
+<span class="material-symbols-outlined" data-icon="share">share</span>
+</button>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pb-6 pt-2 bg-[#0b0e11] border-t border-white/5 shadow-[0_-4px_20px_rgba(0,0,0,0.4)] z-50">
+<a class="flex flex-col items-center justify-center text-slate-500 hover:text-slate-200 transition-all active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="grid_view">grid_view</span>
+<span class="font-['Inter'] text-[10px] font-medium tracking-wide">Dashboard</span>
+</a>
+<a class="flex flex-col items-center justify-center text-indigo-400 bg-indigo-500/10 rounded-xl px-3 py-1 transition-all active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="inventory_2" style="font-variation-settings: 'FILL' 1;">inventory_2</span>
+<span class="font-['Inter'] text-[10px] font-medium tracking-wide">Vault</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-500 hover:text-slate-200 transition-all active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="timer">timer</span>
+<span class="font-['Inter'] text-[10px] font-medium tracking-wide">Focus</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-500 hover:text-slate-200 transition-all active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="person">person</span>
+<span class="font-['Inter'] text-[10px] font-medium tracking-wide">Profile</span>
+</a>
+</nav>
+</body></html>

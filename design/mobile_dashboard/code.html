@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Knowledge Vault - Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "outline-variant": "#404952",
+                        "secondary-fixed": "#e5e1e6",
+                        "surface-container-low": "#0f1418",
+                        "on-secondary-container": "#c1bec3",
+                        "on-error": "#490013",
+                        "on-primary": "#2724b8",
+                        "on-secondary-fixed": "#403f43",
+                        "surface-container": "#141a20",
+                        "surface-container-highest": "#1e272f",
+                        "primary-fixed-dim": "#d1d0ff",
+                        "outline": "#6d7680",
+                        "on-tertiary-container": "#424a63",
+                        "error-dim": "#b95463",
+                        "on-primary-fixed-variant": "#4647d3",
+                        "on-tertiary-fixed": "#2f384f",
+                        "primary": "#c0c1ff",
+                        "on-primary-container": "#ccccff",
+                        "on-primary-fixed": "#2622b7",
+                        "surface-bright": "#222d37",
+                        "primary-fixed": "#e1e0ff",
+                        "error-container": "#7f2737",
+                        "inverse-surface": "#f8f9fe",
+                        "inverse-on-surface": "#535559",
+                        "on-surface-variant": "#a3acb7",
+                        "surface-dim": "#0b0e11",
+                        "on-error-container": "#ff97a3",
+                        "secondary-fixed-dim": "#d6d3d8",
+                        "on-surface": "#dde6f2",
+                        "secondary-dim": "#9f9da1",
+                        "surface-variant": "#1e272f",
+                        "surface-container-high": "#192027",
+                        "on-background": "#dde6f2",
+                        "background": "#0b0e11",
+                        "tertiary-fixed-dim": "#c0c9e6",
+                        "on-secondary": "#202023",
+                        "primary-container": "#2f2ebe",
+                        "tertiary-fixed": "#ced6f5",
+                        "tertiary-container": "#ced6f5",
+                        "surface": "#0b0e11",
+                        "secondary": "#9f9da1",
+                        "surface-container-lowest": "#000000",
+                        "on-tertiary-fixed-variant": "#4b546d",
+                        "secondary-container": "#3c3b3f",
+                        "on-tertiary": "#4a536c",
+                        "tertiary": "#dee5ff",
+                        "inverse-primary": "#494bd7",
+                        "surface-tint": "#c0c1ff",
+                        "error": "#ec7c8a",
+                        "tertiary-dim": "#c0c9e6",
+                        "primary-dim": "#b0b2ff",
+                        "on-secondary-fixed-variant": "#5c5b5f"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .circular-progress {
+            background: radial-gradient(closest-side, #0b0e11 79%, transparent 80% 100%),
+                        conic-gradient(#c0c1ff 75%, #1e272f 0);
+        }
+        /* Hide scrollbar for horizontal scroll */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary/30 antialiased">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#0b0e11] flex items-center justify-between px-6 h-16 w-full">
+<div class="flex items-center gap-3">
+<button class="text-slate-400 hover:bg-slate-800/50 transition-colors p-2 rounded-full active:scale-95 duration-200">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h1 class="font-headline font-bold tracking-tight text-lg text-slate-100">Knowledge Vault</h1>
+</div>
+<button class="text-slate-400 hover:bg-slate-800/50 transition-colors p-2 rounded-full active:scale-95 duration-200">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+</header>
+<main class="pt-20 pb-28 px-6 space-y-8">
+<!-- Welcome Section -->
+<section class="space-y-1">
+<p class="text-on-surface-variant text-sm font-medium">Monday, Oct 24</p>
+<h2 class="font-headline text-3xl font-extrabold tracking-tight text-on-surface">Hello, Julian</h2>
+</section>
+<!-- Progress and Streak Bento Row -->
+<div class="grid grid-cols-12 gap-4">
+<!-- Study Progress Card -->
+<div class="col-span-12 bg-surface-container rounded-xl p-6 flex items-center justify-between">
+<div class="space-y-2">
+<h3 class="font-headline font-bold text-xl">Daily Focus</h3>
+<p class="text-on-surface-variant text-sm max-w-[140px]">You've completed 75% of your target goals.</p>
+<div class="pt-2">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-primary-container text-on-primary-container">
+                            45 / 60 min
+                        </span>
+</div>
+</div>
+<div class="relative w-28 h-28 rounded-full circular-progress flex items-center justify-center">
+<div class="text-center">
+<span class="block text-2xl font-bold font-headline">75%</span>
+</div>
+</div>
+</div>
+<!-- Streak Card -->
+<div class="col-span-12 bg-surface-container-high rounded-xl p-5 flex items-center gap-4">
+<div class="h-12 w-12 rounded-xl bg-error-container/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-error" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+</div>
+<div>
+<h4 class="font-label font-bold text-lg leading-tight">12 Day Streak</h4>
+<p class="text-on-surface-variant text-xs">Keep it up! 3 days until milestone.</p>
+</div>
+<div class="ml-auto">
+<span class="material-symbols-outlined text-on-surface-variant">chevron_right</span>
+</div>
+</div>
+</div>
+<!-- Recent Resources Horizontal Scroll -->
+<section class="space-y-4">
+<div class="flex items-center justify-between">
+<h3 class="font-headline font-bold text-xl">Recent Resources</h3>
+<button class="text-primary text-sm font-semibold">View All</button>
+</div>
+<div class="flex overflow-x-auto gap-4 no-scrollbar -mx-6 px-6">
+<!-- Resource 1 -->
+<div class="flex-none w-64 bg-surface-container rounded-xl overflow-hidden active:scale-95 transition-transform duration-200">
+<div class="h-32 bg-surface-bright relative">
+<img class="w-full h-full object-cover opacity-60" data-alt="Modern abstract digital architecture with clean lines and moody blue atmospheric lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEjS87lenPbOBN7ECpzqLVo5GgqlRDm2XV9TWAh8yb6X5PCt-mZmoQcwjr6uRF4bh3_snfoKZeTAFuGuxFax8XSQaWj9FQDrrO1PDulW2rDOLyI3QeQ1mPwENwFW8eMgSpD8LdE3v9v_KjR7bpD9F3KkPoK6Y06BXNWhnPNMDdkcxhhqGX_FobG9qUKEPO_6z7tNnc8k5oZGoonkO3T_n29QUwK4gXFC-vVlLlZaYqVPfOOmtKyaTfLDDO3OEXYhMDiJFY3mhK8ihE"/>
+<div class="absolute top-3 right-3 bg-surface/80 backdrop-blur-md p-1.5 rounded-lg">
+<span class="material-symbols-outlined text-sm text-on-surface">article</span>
+</div>
+</div>
+<div class="p-4 space-y-2">
+<h4 class="font-bold text-sm line-clamp-1">Advanced Neural Networks</h4>
+<p class="text-on-surface-variant text-xs">Updated 2h ago</p>
+</div>
+</div>
+<!-- Resource 2 -->
+<div class="flex-none w-64 bg-surface-container rounded-xl overflow-hidden active:scale-95 transition-transform duration-200">
+<div class="h-32 bg-surface-bright relative">
+<img class="w-full h-full object-cover opacity-60" data-alt="Close up of an old book with textured pages in a dark moody library setting with soft focus" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCe_vI9whNHWyYukG2MvYP2URfOQEk3kgr7TBmmwAehoJLLhh3yc-J6sZ6I0RSZbPbbecc3-pNWZZ3ERrQhUDjLK67MtLRkitARWPkewqZZBOgEygWbzH3U4ntV60hXOVcwATIe-rXQsMuBtFN5QUuOE5K9P8twTU1OlLY3BHlNqqonZ7xdnayFulehiDxwIXw1inB7Hfmt2TZe_hHj_K1EcPLqawNkRtEJzanAA1a5TyiGQHjWRMICT_WKCe98f25wSY-OlHHCOhNd"/>
+<div class="absolute top-3 right-3 bg-surface/80 backdrop-blur-md p-1.5 rounded-lg">
+<span class="material-symbols-outlined text-sm text-on-surface">menu_book</span>
+</div>
+</div>
+<div class="p-4 space-y-2">
+<h4 class="font-bold text-sm line-clamp-1">Macroeconomic Principles</h4>
+<p class="text-on-surface-variant text-xs">Updated 5h ago</p>
+</div>
+</div>
+<!-- Resource 3 -->
+<div class="flex-none w-64 bg-surface-container rounded-xl overflow-hidden active:scale-95 transition-transform duration-200">
+<div class="h-32 bg-surface-bright relative">
+<img class="w-full h-full object-cover opacity-60" data-alt="A clean organized study desk with a laptop and notebook in a minimalist dark workspace" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsMP6VFfZgrUkV7MjMHXhK-aimCRqF_3lkyMnHokhs0bVuZVXSnDz6O-HjjxPJirujS7s1ZIrJH1yAaFLyGrJeJ6cfl_LFqf_B7kQpFRNLdd5qqJg7eDrEi5occz_-T9xBzp-YymkgpXjoG3AVH67H_LevUyN-ATMjk8gslLSpQFN2lKldtTrpZZB5CxJr2NvzxDUcZJDeIZ4xhZwuYYGd42yBhCSdtFSz1ZxKjwLdaXcD-Abo_SZryKlutFcj1K8CjhUbkatTN7Kq"/>
+<div class="absolute top-3 right-3 bg-surface/80 backdrop-blur-md p-1.5 rounded-lg">
+<span class="material-symbols-outlined text-sm text-on-surface">lightbulb</span>
+</div>
+</div>
+<div class="p-4 space-y-2">
+<h4 class="font-bold text-sm line-clamp-1">Organic Chemistry Basics</h4>
+<p class="text-on-surface-variant text-xs">Updated Yesterday</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Up Next Section -->
+<section class="space-y-4 pb-4">
+<h3 class="font-headline font-bold text-xl">Up Next</h3>
+<div class="space-y-3">
+<div class="bg-surface-container-low border-l-4 border-primary p-4 flex items-center gap-4">
+<div class="flex flex-col items-center">
+<span class="text-xs font-bold text-primary">14:00</span>
+<div class="w-px h-4 bg-outline-variant my-1"></div>
+<span class="text-[10px] text-on-surface-variant">15:30</span>
+</div>
+<div class="flex-1">
+<h5 class="font-semibold text-sm">Deep Focus: Cognitive Psychology</h5>
+<p class="text-xs text-on-surface-variant">Library Room 402</p>
+</div>
+<button class="bg-surface-bright p-2 rounded-lg">
+<span class="material-symbols-outlined text-primary text-xl">timer</span>
+</button>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pb-6 pt-2 bg-[#0b0e11] border-t border-white/5 shadow-[0_-4px_20px_rgba(0,0,0,0.4)] z-50">
+<!-- Dashboard (Active) -->
+<a class="flex flex-col items-center justify-center text-indigo-400 bg-indigo-500/10 rounded-xl px-3 py-1 active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">grid_view</span>
+<span class="font-['Inter'] text-[10px] font-medium tracking-wide">Dashboard</span>
+</a>
+<!-- Vault -->
+<a class="flex flex-col items-center justify-center text-slate-500 hover:text-slate-200 transition-all active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="font-['Inter'] text-[10px] font-medium tracking-wide">Vault</span>
+</a>
+<!-- Focus -->
+<a class="flex flex-col items-center justify-center text-slate-500 hover:text-slate-200 transition-all active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined">timer</span>
+<span class="font-['Inter'] text-[10px] font-medium tracking-wide">Focus</span>
+</a>
+<!-- Profile -->
+<a class="flex flex-col items-center justify-center text-slate-500 hover:text-slate-200 transition-all active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-['Inter'] text-[10px] font-medium tracking-wide">Profile</span>
+</a>
+</nav>
+<!-- FAB -->
+<div class="fixed bottom-24 right-6 z-40">
+<button class="bg-primary hover:bg-primary-dim text-on-primary h-14 w-14 rounded-full shadow-lg flex items-center justify-center active:scale-90 transition-transform">
+<span class="material-symbols-outlined" style="font-variation-settings: 'wght' 600;">add</span>
+</button>
+</div>
+</body></html>
