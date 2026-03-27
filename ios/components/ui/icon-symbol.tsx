@@ -17,6 +17,7 @@ const MAPPING = {
   'house.fill': 'home',
   'paperplane.fill': 'send',
   'chevron.left.forwardslash.chevron.right': 'code',
+  'chevron.left': 'chevron-left',
   'chevron.right': 'chevron-right',
   'square.grid.2x2.fill': 'grid-view',
   'square.grid.2x2': 'grid-view',
@@ -25,6 +26,10 @@ const MAPPING = {
   'timer': 'timer',
   'person.fill': 'person',
   'person': 'person',
+  'ellipsis': 'more-horiz',
+  'pause.fill': 'pause',
+  'play.fill': 'play-arrow',
+  'arrow.counterclockwise': 'refresh',
 } as IconMapping;
 
 /**

@@ -1,8 +1,9 @@
 import React from 'react';
-import { Linking, View, Text, StyleSheet, ScrollView, TouchableOpacity, TextInput, Image, Dimensions } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, TouchableOpacity, TextInput, Dimensions } from 'react-native';
 import { ThemedView } from '@/components/themed-view';
 import { IconSymbol } from '@/components/ui/icon-symbol';
 import { useRouter } from 'expo-router';
+import * as Haptics from 'expo-haptics';
 
 const { width } = Dimensions.get('window');
 
@@ -37,9 +38,9 @@ const RECENT_ITEMS = [
 
 export default function VaultScreen() {
   const router = useRouter();
+  
   return (
     <ThemedView style={styles.container}>
-      {/* TopAppBar */}
       <View style={styles.header}>
         <View style={styles.headerLeft}>
           <TouchableOpacity style={styles.iconButton}>
@@ -55,21 +56,14 @@ export default function VaultScreen() {
       </View>
 
       <ScrollView contentContainerStyle={styles.scrollContent} showsVerticalScrollIndicator={false}>
-        {/* Search Area */}
         <View style={styles.searchContainer}>
-          {/* <IconSymbol size={20} name="timer" color={COLORS.onSurfaceVariant} /> */}
           <TextInput
             style={styles.searchInput}
             placeholder="Search resources..."
             placeholderTextColor="rgba(163, 172, 183, 0.5)"
           />
-          <View style={styles.commandBadge}>
-            {/* <IconSymbol size={12} name="timer" color={COLORS.onSurfaceVariant} />
-            <Text style={styles.commandText}>K</Text> */}
-          </View>
         </View>
 
-        {/* Subject Folders */}
         <View style={styles.sectionHeader}>
           <View>
             <Text style={styles.sectionTitle}>Subject Folders</Text>
@@ -83,7 +77,17 @@ export default function VaultScreen() {
 
         <View style={styles.grid}>
           {SUBJECTS.map((subject, index) => (
-            <TouchableOpacity key={index} style={styles.gridItem}>
+            <TouchableOpacity 
+                key={index} 
+                style={styles.gridItem}
+                onPress={() => {
+                    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
+                    router.push({
+                        pathname: '/vault/[id]',
+                        params: { id: subject.name }
+                    });
+                }}
+            >
               <View style={[styles.subjectIconContainer, { backgroundColor: subject.bg }]}>
                 <IconSymbol size={24} name="folder" color={subject.color} />
               </View>
@@ -93,14 +97,23 @@ export default function VaultScreen() {
           ))}
         </View>
 
-        {/* Recently Added */}
         <View style={styles.sectionHeader}>
           <Text style={styles.sectionTitle}>Recently Added</Text>
         </View>
 
         <View style={styles.recentList}>
           {RECENT_ITEMS.map((item, index) => (
-            <TouchableOpacity key={index} style={styles.recentCard}>
+            <TouchableOpacity 
+                key={index} 
+                style={styles.recentCard}
+                onPress={() => {
+                    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
+                    router.push({
+                        pathname: '/resource/[id]',
+                        params: { id: item.title }
+                    });
+                }}
+            >
               <View style={styles.recentThumbnail}>
                 <View style={styles.thumbnailPlaceholder} />
                 <IconSymbol size={20} name="folder" color="#FFF" style={styles.thumbnailIcon} />
@@ -117,7 +130,6 @@ export default function VaultScreen() {
           ))}
         </View>
       </ScrollView>
-
     </ThemedView>
   );
 }
@@ -174,20 +186,6 @@ const styles = StyleSheet.create({
     flex: 1,
     color: COLORS.onSurface,
     fontSize: 14,
-  },
-  commandBadge: {
-    backgroundColor: COLORS.surfaceBright,
-    paddingHorizontal: 6,
-    paddingVertical: 2,
-    borderRadius: 4,
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 2,
-  },
-  commandText: {
-    color: COLORS.onSurfaceVariant,
-    fontSize: 10,
-    fontWeight: 'bold',
   },
   sectionHeader: {
     flexDirection: 'row',
@@ -265,7 +263,7 @@ const styles = StyleSheet.create({
     width: 48,
     height: 48,
     borderRadius: 8,
-    backgroundColor: COLORS.surfaceVariant,
+    backgroundColor: COLORS.surfaceContainerHighest,
     alignItems: 'center',
     justifyContent: 'center',
     overflow: 'hidden',
@@ -299,9 +297,6 @@ const styles = StyleSheet.create({
     width: 2,
     height: 2,
     borderRadius: 1,
-    backgroundColor: COLORS.outlineVariant,
-  },
-  downloadButton: {
-    padding: 8,
+    backgroundColor: COLORS.onSurfaceVariant,
   }
 });
